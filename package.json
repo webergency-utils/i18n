@@ -1,6 +1,6 @@
 {
   "name": "@webergency-utils/i18n",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "Zero-dependency, isomorphic TypeScript i18n library with math rules, array specificity, and zero-overhead Map index lookup.",
   "author": "radixxko",
@@ -44,7 +44,7 @@
     "@types/node": "^26.0.0",
     "@vitest/coverage-v8": "^4.1.9",
     "tsup": "^8.5.1",
-    "typescript": "^7.0.2",
+    "typescript": "^5.7.0",
     "vitest": "^4.1.9"
   }
 }
