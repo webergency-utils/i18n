@@ -1,0 +1,50 @@
+{
+  "name": "@webergency-utils/i18n",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Zero-dependency, isomorphic TypeScript i18n library with math rules, array specificity, and zero-overhead Map index lookup.",
+  "author": "radixxko",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webergency-utils/i18n.git"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "fuzz": "jazzer fuzz_index.cjs",
+    "coverage": "vitest run --coverage",
+    "clean": "rm -rf ./dist/*",
+    "build": "npm run clean && tsup",
+    "commit": "node -e \"const version = require('./package.json').version.trim(); require('child_process').execSync('git add . && git commit -m \\\"Version ' + version + '\\\"');\"",
+    "version": "npm run build && npm publish --access public && npm run commit && git push"
+  },
+  "devDependencies": {
+    "@jazzer.js/core": "^4.0.0",
+    "@types/node": "^26.0.0",
+    "@vitest/coverage-v8": "^4.1.9",
+    "tsup": "^8.5.1",
+    "typescript": "^5.7.0",
+    "vitest": "^4.1.9"
+  }
+}
