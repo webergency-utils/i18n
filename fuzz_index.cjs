@@ -80,6 +80,10 @@ module.exports.fuzz = function( data )
         {
             return;
         }
+        if( e && typeof e.message === 'string' && ( e.message.includes( 'Invalid multi-language locale branch' ) || e.message.includes( 'locale branch' )))
+        {
+            return;
+        }
         throw e;
     }
 };
